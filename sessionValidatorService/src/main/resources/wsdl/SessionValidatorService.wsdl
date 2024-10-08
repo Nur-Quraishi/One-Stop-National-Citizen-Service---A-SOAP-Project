@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="SessionValidatorService"
+             targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/sessionvalidatorservice/interfaces"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/sessionvalidatorservice/interfaces"
+             xmlns:session="http://iit.du.ac.bd/onestopcitizenservice/sessionvalidatorservice/interfaces"
+             xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+             xmlns:user="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces ../../../../../userService/src/main/resources/schemas/user.xsd">
+
+    <types>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/sessionvalidatorservice/interfaces"
+                       schemaLocation="../schemas/sessionValidator.xsd"/>
+        </xs:schema>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces"
+                       schemaLocation="../../../../../userService/src/main/resources/schemas/user.xsd"/>
+        </xs:schema>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+                       schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+        </xs:schema>
+    </types>
+
+    <message name="faultMsg">
+        <part name="params" element="common:faultMessage"/>
+    </message>
+
+    <message name="evaluateSessionRequestMsg">
+        <part name="params" element="session:evaluateSessionRequest"/>
+    </message>
+
+    <message name="evaluateSessionResponseMsg">
+        <part name="params" element="session:evaluateSessionResponse"/>
+    </message>
+
+    <portType name="SessionValidatorServicePort">
+        <operation name="evaluateSession">
+            <input message="tns:evaluateSessionRequestMsg"/>
+            <output message="tns:evaluateSessionResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+    </portType>
+
+    <binding name="sessionValidatorServiceSOAPBinding" type="tns:SessionValidatorServicePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="evaluateSession">
+            <soap:operation soapAction="evaluateSession"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="SessionValidatorService">
+        <port name="SessionValidatorServicePort" binding="tns:sessionValidatorServiceSOAPBinding">
+            <soap:address location="http://localhost:8084/oscs/sessionValidatorServices"/>
+        </port>
+    </service>
+</definitions>

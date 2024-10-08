@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+           targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+           elementFormDefault="qualified">
+
+    <xs:element name="faultMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="tns:message"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="serviceStatus">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="tns:status"/>
+                <xs:element name="code" type="tns:code"/>
+                <xs:element name="message" type="tns:message"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OK"/>
+            <xs:enumeration value="CREATED"/>
+            <xs:enumeration value="NO CONTENT"/>
+            <xs:enumeration value="UPDATED"/>
+            <xs:enumeration value="DELETED"/>
+            <xs:enumeration value="FAILED"/>
+            <xs:enumeration value="AUTHENTICATION_FAILED"/>
+            <xs:enumeration value="AUTHENTICATION_SUCCESSFUL"/>
+            <xs:enumeration value="SQL_QUERY_FAILURE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="code">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RC: 200"/>
+            <xs:enumeration value="RC: 201"/>
+            <xs:enumeration value="RC: 204"/>
+            <xs:enumeration value="RC: 400"/>
+            <xs:enumeration value="RC: 450"/>
+            <xs:enumeration value="RC: 498"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="message">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Successfully added a new user!"/>
+            <xs:enumeration value="Failed to add a user!"/>
+            <xs:enumeration value="Successfully fetched the user details!"/>
+            <xs:enumeration value="Successfully fetched the list of user details!"/>
+            <xs:enumeration value="Failed to fetch the list of user details!"/>
+            <xs:enumeration value="No user found!"/>
+            <xs:enumeration value="Successfully updated the user!"/>
+            <xs:enumeration value="Failed to update the user!"/>
+            <xs:enumeration value="Successfully deleted the user details!"/>
+            <xs:enumeration value="No user found to be deleted!"/>
+
+            <xs:enumeration value="Successfully added a new contact!"/>
+            <xs:enumeration value="Failed to add a contact!"/>
+            <xs:enumeration value="Successfully fetched the contact details!"/>
+            <xs:enumeration value="Successfully fetched the list of contact details!"/>
+            <xs:enumeration value="Failed to fetch the list of contact details!"/>
+            <xs:enumeration value="No contact found!"/>
+            <xs:enumeration value="Successfully updated the contact!"/>
+            <xs:enumeration value="Failed to update the contact!"/>
+            <xs:enumeration value="Successfully deleted the contact details!"/>
+            <xs:enumeration value="No contact found to be deleted!"/>
+
+            <xs:enumeration value="Email not found!"/>
+            <xs:enumeration value="Mobile number not found!"/>
+            <xs:enumeration value="Incorrect password!"/>
+            <xs:enumeration value="Successfully logged in!"/>
+            <xs:enumeration value="Successfully logged out!"/>
+            <xs:enumeration value="No user found to log out!"/>
+
+            <xs:enumeration value="Successfully validated the user session!"/>
+            <xs:enumeration value="Invalid user session!"/>
+
+            <xs:enumeration value="No match Found!"/>
+            <xs:enumeration value="Successfully fetched the search results!"/>
+
+            <xs:enumeration value="SQL Query Fault!"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="UserService"
+             targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces"
+             xmlns:user="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces"
+             xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces ../../../../../commonService/src/main/resources/schemas/common.xsd">
+
+    <types>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces"
+                       schemaLocation="../schemas/user.xsd"/>
+        </xs:schema>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+                       schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+        </xs:schema>
+    </types>
+
+    <message name="faultMsg">
+        <part name="params" element="common:faultMessage"/>
+    </message>
+
+    <message name="addUserRequestMsg">
+        <part name="params" element="user:addUserRequest"/>
+    </message>
+
+    <message name="addUserResponseMsg">
+        <part name="params" element="user:addUserResponse"/>
+    </message>
+
+    <message name="getUserRequestMsg">
+        <part name="params" element="user:getUserRequest"/>
+    </message>
+
+    <message name="getUserResponseMsg">
+        <part name="params" element="user:getUserResponse"/>
+    </message>
+
+    <message name="getUserWithSessionDetailsRequestMsg">
+        <part name="params" element="user:getUserWithSessionDetailsRequest"/>
+    </message>
+
+    <message name="getUserWithSessionDetailsResponseMsg">
+        <part name="params" element="user:getUserWithSessionDetailsResponse"/>
+    </message>
+
+    <message name="getAllUsersRequestMsg">
+        <part name="params" element="user:getAllUsersRequest"/>
+    </message>
+
+    <message name="getAllUsersResponseMsg">
+        <part name="params" element="user:getAllUsersResponse"/>
+    </message>
+
+    <message name="updateUserRequestMsg">
+        <part name="params" element="user:updateUserRequest"/>
+    </message>
+
+    <message name="updateUserResponseMsg">
+        <part name="params" element="user:updateUserResponse"/>
+    </message>
+
+    <message name="deleteUserRequestMsg">
+        <part name="params" element="user:deleteUserRequest"/>
+    </message>
+
+    <message name="deleteUserResponseMsg">
+        <part name="params" element="user:deleteUserResponse"/>
+    </message>
+
+    <message name="loginWithEmailRequestMsg">
+        <part name="params" element="user:loginWithEmailRequest"/>
+    </message>
+
+    <message name="loginWithEmailResponseMsg">
+        <part name="params" element="user:loginWithEmailResponse"/>
+    </message>
+
+    <message name="loginWithMobileNoRequestMsg">
+        <part name="params" element="user:loginWithMobileNoRequest"/>
+    </message>
+
+    <message name="loginWithMobileNoResponseMsg">
+        <part name="params" element="user:loginWithMobileNoResponse"/>
+    </message>
+
+    <message name="logOutRequestMsg">
+        <part name="params" element="user:logOutRequest"/>
+    </message>
+
+    <message name="logOutResponseMsg">
+        <part name="params" element="user:logOutResponse"/>
+    </message>
+
+    <portType name="UserServicePort">
+        <operation name="addUser">
+            <input message="tns:addUserRequestMsg"/>
+            <output message="tns:addUserResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="getUser">
+            <input message="tns:getUserRequestMsg"/>
+            <output message="tns:getUserResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="getUserWithSessionDetails">
+            <input message="tns:getUserWithSessionDetailsRequestMsg"/>
+            <output message="tns:getUserWithSessionDetailsResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="getAllUsers">
+            <input message="tns:getAllUsersRequestMsg"/>
+            <output message="tns:getAllUsersResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="updateUser">
+            <input message="tns:updateUserRequestMsg"/>
+            <output message="tns:updateUserResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="deleteUser">
+            <input message="tns:deleteUserRequestMsg"/>
+            <output message="tns:deleteUserResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="loginWithEmail">
+            <input message="tns:loginWithEmailRequestMsg"/>
+            <output message="tns:loginWithEmailResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="loginWithMobileNo">
+            <input message="tns:loginWithMobileNoRequestMsg"/>
+            <output message="tns:loginWithMobileNoResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="logOut">
+            <input message="tns:logOutRequestMsg"/>
+            <output message="tns:logOutResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+    </portType>
+
+    <binding name="userServiceSOAPBinding" type="tns:UserServicePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="addUser">
+            <soap:operation soapAction="addUser"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="getUser">
+            <soap:operation soapAction="getUser"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="getUserWithSessionDetails">
+            <soap:operation soapAction="getUserWithSessionDetails"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="getAllUsers">
+            <soap:operation soapAction="getAllUsers"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="updateUser">
+            <soap:operation soapAction="updateUser"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="deleteUser">
+            <soap:operation soapAction="deleteUser"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="loginWithEmail">
+            <soap:operation soapAction="loginWithEmail"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="loginWithMobileNo">
+            <soap:operation soapAction="loginWithMobileNo"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="logOut">
+            <soap:operation soapAction="logOut"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="UserService">
+        <port name="UserServicePort" binding="tns:userServiceSOAPBinding">
+            <soap:address location="http://localhost:8082/oscs/userServices"/>
+        </port>
+    </service>
+</definitions>

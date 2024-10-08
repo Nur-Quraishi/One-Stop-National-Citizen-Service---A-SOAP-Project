@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a03fdabf-6c76-4540-9b4e-dd4e6ff9c337" activeEnvironment="Default" name="citizenContactService" resourceRoot="" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="55dca0b4-9ff4-499a-aad1-71aa1a2a53c6" wsaVersion="NONE" name="citizenContactServiceSOAPBinding" type="wsdl" bindingName="{http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces}citizenContactServiceSOAPBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/nurqu/IdeaProjects/One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project/citizenContactService/src/main/resources/wsdl/citizenContactService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\nurqu\IdeaProjects\One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project\citizenContactService\src\main\resources\wsdl\citizenContactService.wsdl"><con:part><con:url>file:\C:\Users\nurqu\IdeaProjects\One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project\citizenContactService\src\main\resources\wsdl\citizenContactService.wsdl</con:url><con:content><![CDATA[<definitions name="citizenContactService" targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces" xmlns:contact="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces" xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces">
+  <types>
+    <xs:schema>
+      <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces" schemaLocation="../schemas/citizenContact.xsd"/>
+    </xs:schema>
+    <xs:schema>
+      <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces" schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+    </xs:schema>
+  </types>
+  <message name="faultMsg">
+    <part name="params" element="common:faultMessage"/>
+  </message>
+  <message name="addContactRequestMsg">
+    <part name="params" element="contact:addContactRequest"/>
+  </message>
+  <message name="addContactResponseMsg">
+    <part name="params" element="contact:addContactResponse"/>
+  </message>
+  <message name="getContactRequestMsg">
+    <part name="params" element="contact:getContactRequest"/>
+  </message>
+  <message name="getContactResponseMsg">
+    <part name="params" element="contact:getContactResponse"/>
+  </message>
+  <message name="getAllContactsRequestMsg">
+    <part name="params" element="contact:getAllContactsRequest"/>
+  </message>
+  <message name="getAllContactsResponseMsg">
+    <part name="params" element="contact:getAllContactsResponse"/>
+  </message>
+  <message name="updateContactRequestMsg">
+    <part name="params" element="contact:updateContactRequest"/>
+  </message>
+  <message name="updateContactResponseMsg">
+    <part name="params" element="contact:updateContactResponse"/>
+  </message>
+  <message name="deleteContactRequestMsg">
+    <part name="params" element="contact:deleteContactRequest"/>
+  </message>
+  <message name="deleteContactResponseMsg">
+    <part name="params" element="contact:deleteContactResponse"/>
+  </message>
+  <message name="searchByNameRequestMsg">
+    <part name="params" element="contact:searchByNameRequest"/>
+  </message>
+  <message name="searchByNameResponseMsg">
+    <part name="params" element="contact:searchByNameResponse"/>
+  </message>
+  <message name="searchByCategoryRequestMsg">
+    <part name="params" element="contact:searchByCategoryRequest"/>
+  </message>
+  <message name="searchByCategoryResponseMsg">
+    <part name="params" element="contact:searchByCategoryResponse"/>
+  </message>
+  <message name="searchByContactRequestMsg">
+    <part name="params" element="contact:searchByContactRequest"/>
+  </message>
+  <message name="searchByContactResponseMsg">
+    <part name="params" element="contact:searchByContactResponse"/>
+  </message>
+  <portType name="CitizenContactServicePort">
+    <operation name="addContact">
+      <input message="tns:addContactRequestMsg"/>
+      <output message="tns:addContactResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="getContact">
+      <input message="tns:getContactRequestMsg"/>
+      <output message="tns:getContactResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="getAllContacts">
+      <input message="tns:getAllContactsRequestMsg"/>
+      <output message="tns:getAllContactsResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="updateContact">
+      <input message="tns:updateContactRequestMsg"/>
+      <output message="tns:updateContactResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="deleteContact">
+      <input message="tns:deleteContactRequestMsg"/>
+      <output message="tns:deleteContactResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="searchByName">
+      <input message="tns:searchByNameRequestMsg"/>
+      <output message="tns:searchByNameResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="searchByCategory">
+      <input message="tns:searchByCategoryRequestMsg"/>
+      <output message="tns:searchByCategoryResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="searchByContact">
+      <input message="tns:searchByContactRequestMsg"/>
+      <output message="tns:searchByContactResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+  </portType>
+  <binding name="citizenContactServiceSOAPBinding" type="tns:CitizenContactServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="addContact">
+      <soap:operation soapAction="addContact"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getContact">
+      <soap:operation soapAction="getContact"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAllContacts">
+      <soap:operation soapAction="getAllContacts"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateContact">
+      <soap:operation soapAction="updateContact"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteContact">
+      <soap:operation soapAction="deleteContact"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="searchByName">
+      <soap:operation soapAction="searchByName"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="searchByCategory">
+      <soap:operation soapAction="searchByCategory"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="searchByContact">
+      <soap:operation soapAction="searchByContact"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="CitizenContactService">
+    <port name="CitizenContactServicePort" binding="tns:citizenContactServiceSOAPBinding">
+      <soap:address location="http://localhost:8083/oscs/citizenContactServices"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\nurqu\IdeaProjects\One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project\citizenContactService\src\main\resources\schemas\citizenContact.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces" xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces">
+  <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces" schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+  <xs:simpleType name="category">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Education"/>
+      <xs:enumeration value="Environment"/>
+      <xs:enumeration value="Health"/>
+      <xs:enumeration value="Miscellaneous"/>
+      <xs:enumeration value="National"/>
+      <xs:enumeration value="Security"/>
+      <xs:enumeration value="Woman and child"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="contactDetails">
+    <xs:sequence>
+      <xs:element name="uid" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="category" type="tns:category"/>
+      <xs:element name="contactNo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contactList">
+    <xs:sequence>
+      <xs:element name="contacts" type="tns:contactDetails" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="columnToBeSorted">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Category"/>
+      <xs:enumeration value="Name"/>
+      <xs:enumeration value="Contact Number"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="sortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending"/>
+      <xs:enumeration value="Descending"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="searchByNameDetails">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="columnToBeSorted" type="tns:columnToBeSorted"/>
+      <xs:element name="sortOrder" type="tns:sortOrder"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchByCategoryDetails">
+    <xs:sequence>
+      <xs:element name="category" type="tns:category"/>
+      <xs:element name="columnToBeSorted" type="tns:columnToBeSorted"/>
+      <xs:element name="sortOrder" type="tns:sortOrder"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchByContactDetails">
+    <xs:sequence>
+      <xs:element name="contact" type="xs:string"/>
+      <xs:element name="columnToBeSorted" type="tns:columnToBeSorted"/>
+      <xs:element name="sortOrder" type="tns:sortOrder"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="addContactRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactDetails" type="tns:contactDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactDetails" type="tns:contactDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getContactRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactDetails" type="tns:contactDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllContactsRequest">
+    <xs:complexType>
+      <xs:sequence></xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllContactsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactList" type="tns:contactList"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateContactRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactDetails" type="tns:contactDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactDetails" type="tns:contactDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteContactRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactDetails" type="tns:contactDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchByNameRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="searchByNameDetails" type="tns:searchByNameDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactList" type="tns:contactList"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchByCategoryRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="searchByCategoryDetails" type="tns:searchByCategoryDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchByCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactList" type="tns:contactList"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchByContactRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="searchByContactDetails" type="tns:searchByContactDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchByContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contactList" type="tns:contactList"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\nurqu\IdeaProjects\One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project\commonService\src\main\resources\schemas\common.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces">
+  <xs:element name="faultMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="message" type="tns:message"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="serviceStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="status" type="tns:status"/>
+        <xs:element name="code" type="tns:code"/>
+        <xs:element name="message" type="tns:message"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="CREATED"/>
+      <xs:enumeration value="NO CONTENT"/>
+      <xs:enumeration value="UPDATED"/>
+      <xs:enumeration value="DELETED"/>
+      <xs:enumeration value="FAILED"/>
+      <xs:enumeration value="AUTHENTICATION_FAILED"/>
+      <xs:enumeration value="AUTHENTICATION_SUCCESSFUL"/>
+      <xs:enumeration value="SQL_QUERY_FAILURE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RC: 200"/>
+      <xs:enumeration value="RC: 201"/>
+      <xs:enumeration value="RC: 204"/>
+      <xs:enumeration value="RC: 400"/>
+      <xs:enumeration value="RC: 450"/>
+      <xs:enumeration value="RC: 498"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="message">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Successfully added a new user!"/>
+      <xs:enumeration value="Failed to add a user!"/>
+      <xs:enumeration value="Successfully fetched the user details!"/>
+      <xs:enumeration value="Successfully fetched the list of user details!"/>
+      <xs:enumeration value="Failed to fetch the list of user details!"/>
+      <xs:enumeration value="No user found!"/>
+      <xs:enumeration value="Successfully updated the user!"/>
+      <xs:enumeration value="Failed to update the user!"/>
+      <xs:enumeration value="Successfully deleted the user details!"/>
+      <xs:enumeration value="No user found to be deleted!"/>
+      <xs:enumeration value="Successfully added a new contact!"/>
+      <xs:enumeration value="Failed to add a contact!"/>
+      <xs:enumeration value="Successfully fetched the contact details!"/>
+      <xs:enumeration value="Successfully fetched the list of contact details!"/>
+      <xs:enumeration value="Failed to fetch the list of contact details!"/>
+      <xs:enumeration value="No contact found!"/>
+      <xs:enumeration value="Successfully updated the contact!"/>
+      <xs:enumeration value="Failed to update the contact!"/>
+      <xs:enumeration value="Successfully deleted the contact details!"/>
+      <xs:enumeration value="No contact found to be deleted!"/>
+      <xs:enumeration value="Email not found!"/>
+      <xs:enumeration value="Mobile number not found!"/>
+      <xs:enumeration value="Incorrect password!"/>
+      <xs:enumeration value="Successfully logged in!"/>
+      <xs:enumeration value="Successfully logged out!"/>
+      <xs:enumeration value="No user found to log out!"/>
+      <xs:enumeration value="Successfully validated the user session!"/>
+      <xs:enumeration value="Invalid user session!"/>
+      <xs:enumeration value="No match Found!"/>
+      <xs:enumeration value="Successfully fetched the search results!"/>
+      <xs:enumeration value="SQL Query Fault!"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint></con:endpoints><con:operation id="0dea96f8-d9f1-4712-ba4a-3b7c326968b9" isOneWay="false" action="addContact" name="addContact" bindingOperationName="addContact" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6a0423c0-221b-4c87-a6ed-1ae36e64351a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:addContactRequest>\r
+         <int:contactDetails>\r
+            <int:uid>?</int:uid>\r
+            <int:name>?</int:name>\r
+            <int:category>?</int:category>\r
+            <int:contactNo>?</int:contactNo>\r
+         </int:contactDetails>\r
+      </int:addContactRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="addContact"/></con:call></con:operation><con:operation id="449080c5-faf7-4335-8204-b2dfdeb720be" isOneWay="false" action="deleteContact" name="deleteContact" bindingOperationName="deleteContact" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f24eddf4-58ba-471c-aedc-c96a7da1f7a4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:deleteContactRequest>\r
+         <int:uid>?</int:uid>\r
+      </int:deleteContactRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="deleteContact"/></con:call></con:operation><con:operation id="a3bad02f-3ae3-4289-8217-cf631ac44e61" isOneWay="false" action="getAllContacts" name="getAllContacts" bindingOperationName="getAllContacts" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9469bbd2-5bc5-48e1-bf8b-27af83602e02" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:getAllContactsRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getAllContacts"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5d9fee8a-f534-4034-bd92-aaafae79dc56" isOneWay="false" action="getContact" name="getContact" bindingOperationName="getContact" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6938c54f-8917-476e-8496-af822a4aca5d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:getContactRequest>\r
+         <int:uid>?</int:uid>\r
+      </int:getContactRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getContact"/></con:call></con:operation><con:operation id="266166b5-b8b7-49a0-a778-d44f5abd31fb" isOneWay="false" action="searchByCategory" name="searchByCategory" bindingOperationName="searchByCategory" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a3913ab9-8998-4692-874e-4e4c0ee4e635" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:searchByCategoryRequest>\r
+         <int:searchByCategoryDetails>\r
+            <int:category>National</int:category>\r
+            <int:columnToBeSorted>Contact No</int:columnToBeSorted>\r
+            <int:sortOrder>Ascending</int:sortOrder>\r
+         </int:searchByCategoryDetails>\r
+      </int:searchByCategoryRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="searchByCategory"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="93eb2712-f6e2-4cba-a2d8-ee6c9f547386" isOneWay="false" action="searchByContact" name="searchByContact" bindingOperationName="searchByContact" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="75b12d22-ce22-4a9b-940d-f1539abf0e84" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:searchByContactRequest>\r
+         <int:searchByContactDetails>\r
+            <int:contact>?</int:contact>\r
+            <int:columnToBeSorted>?</int:columnToBeSorted>\r
+            <int:sortOrder>?</int:sortOrder>\r
+         </int:searchByContactDetails>\r
+      </int:searchByContactRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="searchByContact"/></con:call></con:operation><con:operation id="1792260a-c5ba-4f6c-87ca-4e8ba947d0a1" isOneWay="false" action="searchByName" name="searchByName" bindingOperationName="searchByName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="36755c69-dede-4cb6-b34f-6fe712e5e2b6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:searchByNameRequest>\r
+         <int:searchByNameDetails>\r
+            <int:name>hotline</int:name>\r
+            <int:columnToBeSorted>Contact No</int:columnToBeSorted>\r
+            <int:sortOrder>Ascending</int:sortOrder>\r
+         </int:searchByNameDetails>\r
+      </int:searchByNameRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="searchByName"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f22cae9c-90ea-4c90-9bf2-c83e25cf8ccd" isOneWay="false" action="updateContact" name="updateContact" bindingOperationName="updateContact" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="db3a6bd5-5b2a-4853-bbc9-cfdec25d0a27" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8083/oscs/citizenContactServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:updateContactRequest>\r
+         <int:contactDetails>\r
+            <int:uid>?</int:uid>\r
+            <int:name>?</int:name>\r
+            <int:category>?</int:category>\r
+            <int:contactNo>?</int:contactNo>\r
+         </int:contactDetails>\r
+      </int:updateContactRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="updateContact"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

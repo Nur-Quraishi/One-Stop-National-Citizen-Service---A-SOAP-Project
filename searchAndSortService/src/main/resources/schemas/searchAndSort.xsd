@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/searchandsortservice/interfaces"
+           targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/searchandsortservice/interfaces"
+           xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+           xmlns:contact="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces"
+           xmlns:session="http://iit.du.ac.bd/onestopcitizenservice/sessionvalidatorservice/interfaces"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+               schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+
+    <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/sessionvalidatorservice/interfaces"
+               schemaLocation="../../../../../sessionValidatorService/src/main/resources/schemas/sessionValidator.xsd"/>
+
+    <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces"
+               schemaLocation="../../../../../citizenContactService/src/main/resources/schemas/citizenContact.xsd"/>
+
+    <xs:element name="validationWithSearchByNameRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionDetails" type="session:sessionValidatorDetails"/>
+                <xs:element name="searchByNameDetails" type="contact:searchByNameDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="validationWithSearchByNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="searchResults" type="contact:contactList"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="validationWithSearchByCategoryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionDetails" type="session:sessionValidatorDetails"/>
+                <xs:element name="searchByCategoryDetails" type="contact:searchByCategoryDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="validationWithSearchByCategoryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="searchResults" type="contact:contactList"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="validationWithSearchByContactRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionDetails" type="session:sessionValidatorDetails"/>
+                <xs:element name="searchByContactDetails" type="contact:searchByContactDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="validationWithSearchByContactResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="searchResults" type="contact:contactList"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

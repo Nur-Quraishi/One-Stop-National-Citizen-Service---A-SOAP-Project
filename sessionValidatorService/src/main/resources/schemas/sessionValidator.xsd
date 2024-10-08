@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/sessionvalidatorservice/interfaces"
+           targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/sessionvalidatorservice/interfaces"
+           xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+           xmlns:user="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+               schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+
+    <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces"
+               schemaLocation="../../../../../userService/src/main/resources/schemas/user.xsd"/>
+
+    <xs:complexType name="sessionValidatorDetails">
+        <xs:sequence>
+            <xs:element name="uid" type="xs:long"/>
+            <xs:element name="sessionToken" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="evaluateSessionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionValidatorDetails" type="tns:sessionValidatorDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="evaluateSessionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userDetails" type="user:userDetails"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

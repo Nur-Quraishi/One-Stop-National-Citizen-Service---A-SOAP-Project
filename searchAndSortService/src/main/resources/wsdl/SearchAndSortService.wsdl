@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="SearchAndSortService"
+             targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/searchandsortservice/interfaces"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/searchandsortservice/interfaces"
+             xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces">
+
+    <types>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/searchandsortservice/interfaces"
+                       schemaLocation="../schemas/searchAndSort.xsd"/>
+        </xs:schema>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+                       schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+        </xs:schema>
+    </types>
+
+    <message name="faultMsg">
+        <part name="params" element="common:faultMessage"/>
+    </message>
+
+    <message name="validationWithSearchByNameRequestMsg">
+        <part name="params" element="tns:validationWithSearchByNameRequest"/>
+    </message>
+
+    <message name="validationWithSearchByNameResponseMsg">
+        <part name="params" element="tns:validationWithSearchByNameResponse"/>
+    </message>
+
+    <message name="validationWithSearchByCategoryRequestMsg">
+        <part name="params" element="tns:validationWithSearchByCategoryRequest"/>
+    </message>
+
+    <message name="validationWithSearchByCategoryResponseMsg">
+        <part name="params" element="tns:validationWithSearchByCategoryResponse"/>
+    </message>
+
+    <message name="validationWithSearchByContactRequestMsg">
+        <part name="params" element="tns:validationWithSearchByContactRequest"/>
+    </message>
+
+    <message name="validationWithSearchByContactResponseMsg">
+        <part name="params" element="tns:validationWithSearchByContactResponse"/>
+    </message>
+
+    <portType name="SearchAndSortServicePort">
+        <operation name="searchByNameWithValidation">
+            <input message="tns:validationWithSearchByNameRequestMsg"/>
+            <output message="tns:validationWithSearchByNameResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="searchByCategoryWithValidation">
+            <input message="tns:validationWithSearchByCategoryRequestMsg"/>
+            <output message="tns:validationWithSearchByContactResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="searchByContactWithValidation">
+            <input message="tns:validationWithSearchByContactRequestMsg"/>
+            <output message="tns:validationWithSearchByContactResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+    </portType>
+
+    <binding name="searchAndSortServiceSOAPBinding" type="tns:SearchAndSortServicePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="searchByNameWithValidation">
+            <soap:operation soapAction="searchByNameWithValidation"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="searchByCategoryWithValidation">
+            <soap:operation soapAction="searchByCategoryWithValidation"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="searchByContactWithValidation">
+            <soap:operation soapAction="searchByContactWithValidation"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="SessionValidatorService">
+        <port name="SessionValidatorServicePort" binding="tns:searchAndSortServiceSOAPBinding">
+            <soap:address location="http://localhost:8085/oscs/searchAndSortServices"/>
+        </port>
+    </service>
+</definitions>

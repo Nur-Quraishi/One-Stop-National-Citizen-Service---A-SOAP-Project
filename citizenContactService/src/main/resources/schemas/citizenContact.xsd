@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces"
+           targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces"
+           xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+               schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+
+    <xs:simpleType name="category">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Education"/>
+            <xs:enumeration value="Environment"/>
+            <xs:enumeration value="Health"/>
+            <xs:enumeration value="Miscellaneous"/>
+            <xs:enumeration value="National"/>
+            <xs:enumeration value="Security"/>
+            <xs:enumeration value="Woman and child"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="contactDetails">
+        <xs:sequence>
+            <xs:element name="uid" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="category" type="tns:category"/>
+            <xs:element name="contactNo" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="contactList">
+        <xs:sequence>
+            <xs:element name="contacts" type="tns:contactDetails" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="sortOrder">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ascending"/>
+            <xs:enumeration value="Descending"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="columnToBeSorted">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Name"/>
+            <xs:enumeration value="Category"/>
+            <xs:enumeration value="Contact No"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="searchByNameDetails">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="columnToBeSorted" type="tns:columnToBeSorted"/>
+            <xs:element name="sortOrder" type="tns:sortOrder"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="searchByCategoryDetails">
+        <xs:sequence>
+            <xs:element name="category" type="tns:category"/>
+            <xs:element name="columnToBeSorted" type="tns:columnToBeSorted"/>
+            <xs:element name="sortOrder" type="tns:sortOrder"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="searchByContactDetails">
+        <xs:sequence>
+            <xs:element name="contact" type="xs:string"/>
+            <xs:element name="columnToBeSorted" type="tns:columnToBeSorted"/>
+            <xs:element name="sortOrder" type="tns:sortOrder"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="addContactRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactDetails" type="tns:contactDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addContactResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactDetails" type="tns:contactDetails"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getContactRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="uid" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getContactResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactDetails" type="tns:contactDetails"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllContactsRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllContactsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactList" type="tns:contactList"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateContactRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactDetails" type="tns:contactDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateContactResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactDetails" type="tns:contactDetails"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteContactRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="uid" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteContactResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactDetails" type="tns:contactDetails"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="searchByNameRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="searchByNameDetails" type="tns:searchByNameDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="searchByNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactList" type="tns:contactList"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="searchByCategoryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="searchByCategoryDetails" type="tns:searchByCategoryDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="searchByCategoryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactList" type="tns:contactList"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="searchByContactRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="searchByContactDetails" type="tns:searchByContactDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="searchByContactResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contactList" type="tns:contactList"/>
+                <xs:element ref="common:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

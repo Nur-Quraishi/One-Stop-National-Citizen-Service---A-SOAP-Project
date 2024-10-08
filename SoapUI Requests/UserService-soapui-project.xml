@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f91cb3de-1090-4a66-bdcd-85f17b1603b7" activeEnvironment="Default" name="UserService" resourceRoot="" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="565891e3-473e-4f5f-b378-a1d092f63cd7" wsaVersion="NONE" name="userServiceSOAPBinding" type="wsdl" bindingName="{http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces}userServiceSOAPBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/nurqu/IdeaProjects/One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project/userService/src/main/resources/wsdl/UserService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\nurqu\IdeaProjects\One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project\userService\src\main\resources\wsdl\UserService.wsdl"><con:part><con:url>file:\C:\Users\nurqu\IdeaProjects\One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project\userService\src\main\resources\wsdl\UserService.wsdl</con:url><con:content><![CDATA[<definitions name="UserService" targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces" xsi:schemaLocation="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces ../../../../../commonService/src/main/resources/schemas/common.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces" xmlns:user="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces" xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <types>
+    <xs:schema>
+      <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces" schemaLocation="../schemas/user.xsd"/>
+    </xs:schema>
+    <xs:schema>
+      <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces" schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+    </xs:schema>
+  </types>
+  <message name="faultMsg">
+    <part name="params" element="common:faultMessage"/>
+  </message>
+  <message name="addUserRequestMsg">
+    <part name="params" element="user:addUserRequest"/>
+  </message>
+  <message name="addUserResponseMsg">
+    <part name="params" element="user:addUserResponse"/>
+  </message>
+  <message name="getUserRequestMsg">
+    <part name="params" element="user:getUserRequest"/>
+  </message>
+  <message name="getUserResponseMsg">
+    <part name="params" element="user:getUserResponse"/>
+  </message>
+  <message name="getUserWithSessionDetailsRequestMsg">
+    <part name="params" element="user:getUserWithSessionDetailsRequest"/>
+  </message>
+  <message name="getUserWithSessionDetailsResponseMsg">
+    <part name="params" element="user:getUserWithSessionDetailsResponse"/>
+  </message>
+  <message name="getAllUsersRequestMsg">
+    <part name="params" element="user:getAllUsersRequest"/>
+  </message>
+  <message name="getAllUsersResponseMsg">
+    <part name="params" element="user:getAllUsersResponse"/>
+  </message>
+  <message name="updateUserRequestMsg">
+    <part name="params" element="user:updateUserRequest"/>
+  </message>
+  <message name="updateUserResponseMsg">
+    <part name="params" element="user:updateUserResponse"/>
+  </message>
+  <message name="deleteUserRequestMsg">
+    <part name="params" element="user:deleteUserRequest"/>
+  </message>
+  <message name="deleteUserResponseMsg">
+    <part name="params" element="user:deleteUserResponse"/>
+  </message>
+  <message name="loginWithEmailRequestMsg">
+    <part name="params" element="user:loginWithEmailRequest"/>
+  </message>
+  <message name="loginWithEmailResponseMsg">
+    <part name="params" element="user:loginWithEmailResponse"/>
+  </message>
+  <message name="loginWithMobileNoRequestMsg">
+    <part name="params" element="user:loginWithMobileNoRequest"/>
+  </message>
+  <message name="loginWithMobileNoResponseMsg">
+    <part name="params" element="user:loginWithMobileNoResponse"/>
+  </message>
+  <message name="logOutRequestMsg">
+    <part name="params" element="user:logOutRequest"/>
+  </message>
+  <message name="logOutResponseMsg">
+    <part name="params" element="user:logOutResponse"/>
+  </message>
+  <portType name="UserServicePort">
+    <operation name="addUser">
+      <input message="tns:addUserRequestMsg"/>
+      <output message="tns:addUserResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="getUser">
+      <input message="tns:getUserRequestMsg"/>
+      <output message="tns:getUserResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="getUserWithSessionDetails">
+      <input message="tns:getUserWithSessionDetailsRequestMsg"/>
+      <output message="tns:getUserWithSessionDetailsResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="getAllUsers">
+      <input message="tns:getAllUsersRequestMsg"/>
+      <output message="tns:getAllUsersResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="updateUser">
+      <input message="tns:updateUserRequestMsg"/>
+      <output message="tns:updateUserResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="deleteUser">
+      <input message="tns:deleteUserRequestMsg"/>
+      <output message="tns:deleteUserResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="loginWithEmail">
+      <input message="tns:loginWithEmailRequestMsg"/>
+      <output message="tns:loginWithEmailResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="loginWithMobileNo">
+      <input message="tns:loginWithMobileNoRequestMsg"/>
+      <output message="tns:loginWithMobileNoResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+    <operation name="logOut">
+      <input message="tns:logOutRequestMsg"/>
+      <output message="tns:logOutResponseMsg"/>
+      <fault name="faultMsg" message="tns:faultMsg"/>
+    </operation>
+  </portType>
+  <binding name="userServiceSOAPBinding" type="tns:UserServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="addUser">
+      <soap:operation soapAction="addUser"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getUser">
+      <soap:operation soapAction="getUser"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getUserWithSessionDetails">
+      <soap:operation soapAction="getUserWithSessionDetails"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAllUsers">
+      <soap:operation soapAction="getAllUsers"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateUser">
+      <soap:operation soapAction="updateUser"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteUser">
+      <soap:operation soapAction="deleteUser"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="loginWithEmail">
+      <soap:operation soapAction="loginWithEmail"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="loginWithMobileNo">
+      <soap:operation soapAction="loginWithMobileNo"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="logOut">
+      <soap:operation soapAction="logOut"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="UserService">
+    <port name="UserServicePort" binding="tns:userServiceSOAPBinding">
+      <soap:address location="http://localhost:8082/oscs/userServices"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\nurqu\IdeaProjects\One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project\userService\src\main\resources\schemas\user.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces" xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces">
+  <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces" schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+  <xs:complexType name="userDetails">
+    <xs:sequence>
+      <xs:element name="uid" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="address" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="mobileNo" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="userWithSessionDetails">
+    <xs:sequence>
+      <xs:element name="uid" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="address" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="mobileNo" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+      <xs:element name="sessionToken" type="xs:string"/>
+      <xs:element name="expiryDate" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="userWithSessionDetails" type="tns:userWithSessionDetails"/>
+  <xs:complexType name="userList">
+    <xs:sequence>
+      <xs:element name="users" type="tns:userDetails" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginWithEmailDetails">
+    <xs:sequence>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginWithMobileNoDetails">
+    <xs:sequence>
+      <xs:element name="mobileNo" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="addUserRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userDetails" type="tns:userDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userDetails" type="tns:userDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userDetails" type="tns:userDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserWithSessionDetailsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserWithSessionDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userWithSessionDetails" type="tns:userWithSessionDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllUsersRequest">
+    <xs:complexType>
+      <xs:sequence></xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userList" type="tns:userList"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUserRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userDetails" type="tns:userDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userDetails" type="tns:userDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteUserRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userDetails" type="tns:userDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginWithEmailRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loginWithEmailDetails" type="tns:loginWithEmailDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginWithEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userWithSessionDetails" type="tns:userWithSessionDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginWithMobileNoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loginWithMobileNoDetails" type="tns:loginWithMobileNoDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginWithMobileNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userWithSessionDetails" type="tns:userWithSessionDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="logOutRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="logOutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userDetails" type="tns:userDetails"/>
+        <xs:element ref="common:serviceStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\nurqu\IdeaProjects\One%20Stop%20National%20Citizen%20Service%20-%20A%20SOAP%20Project\commonService\src\main\resources\schemas\common.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces">
+  <xs:element name="faultMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="message" type="tns:message"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="serviceStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="status" type="tns:status"/>
+        <xs:element name="code" type="tns:code"/>
+        <xs:element name="message" type="tns:message"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="CREATED"/>
+      <xs:enumeration value="NO CONTENT"/>
+      <xs:enumeration value="UPDATED"/>
+      <xs:enumeration value="DELETED"/>
+      <xs:enumeration value="FAILED"/>
+      <xs:enumeration value="AUTHENTICATION_FAILED"/>
+      <xs:enumeration value="AUTHENTICATION_SUCCESSFUL"/>
+      <xs:enumeration value="SQL_QUERY_FAILURE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RC: 200"/>
+      <xs:enumeration value="RC: 201"/>
+      <xs:enumeration value="RC: 204"/>
+      <xs:enumeration value="RC: 400"/>
+      <xs:enumeration value="RC: 450"/>
+      <xs:enumeration value="RC: 498"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="message">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Successfully added a new user!"/>
+      <xs:enumeration value="Failed to add a user!"/>
+      <xs:enumeration value="Successfully fetched the user details!"/>
+      <xs:enumeration value="Successfully fetched the list of user details!"/>
+      <xs:enumeration value="Failed to fetch the list of user details!"/>
+      <xs:enumeration value="No user found!"/>
+      <xs:enumeration value="Successfully updated the user!"/>
+      <xs:enumeration value="Failed to update the user!"/>
+      <xs:enumeration value="Successfully deleted the user details!"/>
+      <xs:enumeration value="No user found to be deleted!"/>
+      <xs:enumeration value="Successfully added a new contact!"/>
+      <xs:enumeration value="Failed to add a contact!"/>
+      <xs:enumeration value="Successfully fetched the contact details!"/>
+      <xs:enumeration value="Successfully fetched the list of contact details!"/>
+      <xs:enumeration value="Failed to fetch the list of contact details!"/>
+      <xs:enumeration value="No contact found!"/>
+      <xs:enumeration value="Successfully updated the contact!"/>
+      <xs:enumeration value="Failed to update the contact!"/>
+      <xs:enumeration value="Successfully deleted the contact details!"/>
+      <xs:enumeration value="No contact found to be deleted!"/>
+      <xs:enumeration value="Email not found!"/>
+      <xs:enumeration value="Mobile number not found!"/>
+      <xs:enumeration value="Incorrect password!"/>
+      <xs:enumeration value="Successfully logged in!"/>
+      <xs:enumeration value="Successfully logged out!"/>
+      <xs:enumeration value="No user found to log out!"/>
+      <xs:enumeration value="Successfully validated the user session!"/>
+      <xs:enumeration value="Invalid user session!"/>
+      <xs:enumeration value="No match Found!"/>
+      <xs:enumeration value="Successfully fetched the search results!"/>
+      <xs:enumeration value="SQL Query Fault!"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint></con:endpoints><con:operation id="5497c725-5ec7-4064-9adc-bb18089505a9" isOneWay="false" action="addUser" name="addUser" bindingOperationName="addUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ba5f3995-98c8-45c8-b741-6be8e4b0570e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:addUserRequest>\r
+         <int:userDetails>\r
+            <int:uid>?</int:uid>\r
+            <int:name>?</int:name>\r
+            <int:address>?</int:address>\r
+            <int:email>?</int:email>\r
+            <int:mobileNo>?</int:mobileNo>\r
+            <int:password>?</int:password>\r
+         </int:userDetails>\r
+      </int:addUserRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="addUser"/></con:call></con:operation><con:operation id="ad420fee-bf98-46a4-846c-6f81abf1eddb" isOneWay="false" action="deleteUser" name="deleteUser" bindingOperationName="deleteUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="859f4e94-13ec-45b6-9623-d68bd8bb43a4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:deleteUserRequest>\r
+         <int:uid>?</int:uid>\r
+      </int:deleteUserRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="deleteUser"/></con:call></con:operation><con:operation id="b0c57a72-3a02-462d-bc1a-92aad9f65b46" isOneWay="false" action="getAllUsers" name="getAllUsers" bindingOperationName="getAllUsers" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="35db4b3a-a82a-461e-9698-2369e4ce5c57" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:getAllUsersRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getAllUsers"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f006a702-47a3-46b7-a62e-5b0c2c5cfc48" isOneWay="false" action="getUser" name="getUser" bindingOperationName="getUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="380a5f96-b5b2-47e1-943b-73b8a4503072" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:getUserRequest>\r
+         <int:uid>?</int:uid>\r
+      </int:getUserRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getUser"/></con:call></con:operation><con:operation id="9ec5b5b3-f4ac-42ed-abe9-660f69ef604f" isOneWay="false" action="getUserWithSessionDetails" name="getUserWithSessionDetails" bindingOperationName="getUserWithSessionDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6904673f-061d-4550-9ef6-612ffebd436e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:getUserWithSessionDetailsRequest>\r
+         <int:uid>?</int:uid>\r
+      </int:getUserWithSessionDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getUserWithSessionDetails"/></con:call></con:operation><con:operation id="8fb315e2-5c00-4e78-bdcd-6fb88bb1b526" isOneWay="false" action="loginWithEmail" name="loginWithEmail" bindingOperationName="loginWithEmail" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f4739ded-c61c-4719-9f50-973652436b9e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:loginWithEmailRequest>\r
+         <int:loginWithEmailDetails>\r
+            <int:email>nur.quraishi@gmail.com</int:email>\r
+            <int:password>12345</int:password>\r
+         </int:loginWithEmailDetails>\r
+      </int:loginWithEmailRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="loginWithEmail"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5607b8f5-2c13-47fe-a7ef-a839f02eda45" isOneWay="false" action="loginWithMobileNo" name="loginWithMobileNo" bindingOperationName="loginWithMobileNo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="96662fd3-85ad-44ce-931e-2aed751848fa" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:loginWithMobileNoRequest>\r
+         <int:loginWithMobileNoDetails>\r
+            <int:mobileNo>+8801733999551</int:mobileNo>\r
+            <int:password>12345</int:password>\r
+         </int:loginWithMobileNoDetails>\r
+      </int:loginWithMobileNoRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="loginWithMobileNo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="165644a8-bd01-4f3d-83a2-3e0d09f7f171" isOneWay="false" action="logOut" name="logOut" bindingOperationName="logOut" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="843ad76d-6cee-4bb8-a5f9-6221d311f10c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:logOutRequest>\r
+         <int:uid>2</int:uid>\r
+      </int:logOutRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="logOut"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2e1fd41d-9df9-4837-b4b2-6095c13de82c" isOneWay="false" action="updateUser" name="updateUser" bindingOperationName="updateUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aea8c717-8df2-4fe1-9942-b635be906032" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/oscs/userServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://iit.du.ac.bd/onestopcitizenservice/userservice/interfaces">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:updateUserRequest>\r
+         <int:userDetails>\r
+            <int:uid>?</int:uid>\r
+            <int:name>?</int:name>\r
+            <int:address>?</int:address>\r
+            <int:email>?</int:email>\r
+            <int:mobileNo>?</int:mobileNo>\r
+            <int:password>?</int:password>\r
+         </int:userDetails>\r
+      </int:updateUserRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="updateUser"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

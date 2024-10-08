@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="citizenContactService"
+             targetNamespace="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces"
+             xmlns:contact="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces"
+             xmlns:common="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces">
+
+    <types>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/citizencontactservice/interfaces"
+                       schemaLocation="../schemas/citizenContact.xsd"/>
+        </xs:schema>
+        <xs:schema>
+            <xs:import namespace="http://iit.du.ac.bd/onestopcitizenservice/commonservice/interfaces"
+                       schemaLocation="../../../../../commonService/src/main/resources/schemas/common.xsd"/>
+        </xs:schema>
+    </types>
+
+    <message name="faultMsg">
+        <part name="params" element="common:faultMessage"/>
+    </message>
+
+    <message name="addContactRequestMsg">
+        <part name="params" element="contact:addContactRequest"/>
+    </message>
+
+    <message name="addContactResponseMsg">
+        <part name="params" element="contact:addContactResponse"/>
+    </message>
+
+    <message name="getContactRequestMsg">
+        <part name="params" element="contact:getContactRequest"/>
+    </message>
+
+    <message name="getContactResponseMsg">
+        <part name="params" element="contact:getContactResponse"/>
+    </message>
+
+    <message name="getAllContactsRequestMsg">
+        <part name="params" element="contact:getAllContactsRequest"/>
+    </message>
+
+    <message name="getAllContactsResponseMsg">
+        <part name="params" element="contact:getAllContactsResponse"/>
+    </message>
+
+    <message name="updateContactRequestMsg">
+        <part name="params" element="contact:updateContactRequest"/>
+    </message>
+
+    <message name="updateContactResponseMsg">
+        <part name="params" element="contact:updateContactResponse"/>
+    </message>
+
+    <message name="deleteContactRequestMsg">
+        <part name="params" element="contact:deleteContactRequest"/>
+    </message>
+
+    <message name="deleteContactResponseMsg">
+        <part name="params" element="contact:deleteContactResponse"/>
+    </message>
+
+    <message name="searchByNameRequestMsg">
+        <part name="params" element="contact:searchByNameRequest"/>
+    </message>
+
+    <message name="searchByNameResponseMsg">
+        <part name="params" element="contact:searchByNameResponse"/>
+    </message>
+
+    <message name="searchByCategoryRequestMsg">
+        <part name="params" element="contact:searchByCategoryRequest"/>
+    </message>
+
+    <message name="searchByCategoryResponseMsg">
+        <part name="params" element="contact:searchByCategoryResponse"/>
+    </message>
+
+    <message name="searchByContactRequestMsg">
+        <part name="params" element="contact:searchByContactRequest"/>
+    </message>
+
+    <message name="searchByContactResponseMsg">
+        <part name="params" element="contact:searchByContactResponse"/>
+    </message>
+
+    <portType name="CitizenContactServicePort">
+        <operation name="addContact">
+            <input message="tns:addContactRequestMsg"/>
+            <output message="tns:addContactResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="getContact">
+            <input message="tns:getContactRequestMsg"/>
+            <output message="tns:getContactResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="getAllContacts">
+            <input message="tns:getAllContactsRequestMsg"/>
+            <output message="tns:getAllContactsResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="updateContact">
+            <input message="tns:updateContactRequestMsg"/>
+            <output message="tns:updateContactResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="deleteContact">
+            <input message="tns:deleteContactRequestMsg"/>
+            <output message="tns:deleteContactResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="searchByName">
+            <input message="tns:searchByNameRequestMsg"/>
+            <output message="tns:searchByNameResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="searchByCategory">
+            <input message="tns:searchByCategoryRequestMsg"/>
+            <output message="tns:searchByCategoryResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+
+        <operation name="searchByContact">
+            <input message="tns:searchByContactRequestMsg"/>
+            <output message="tns:searchByContactResponseMsg"/>
+            <fault name="faultMsg" message="tns:faultMsg"/>
+        </operation>
+    </portType>
+
+    <binding name="citizenContactServiceSOAPBinding" type="tns:CitizenContactServicePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="addContact">
+            <soap:operation soapAction="addContact"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="getContact">
+            <soap:operation soapAction="getContact"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="getAllContacts">
+            <soap:operation soapAction="getAllContacts"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="updateContact">
+            <soap:operation soapAction="updateContact"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="deleteContact">
+            <soap:operation soapAction="deleteContact"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="searchByName">
+            <soap:operation soapAction="searchByName"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="searchByCategory">
+            <soap:operation soapAction="searchByCategory"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="searchByContact">
+            <soap:operation soapAction="searchByContact"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="CitizenContactService">
+        <port name="CitizenContactServicePort" binding="tns:citizenContactServiceSOAPBinding">
+            <soap:address location="http://localhost:8083/oscs/citizenContactServices"/>
+        </port>
+    </service>
+</definitions>
