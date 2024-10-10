@@ -14,7 +14,7 @@ To install and run The OSCS application, follow these steps along with some mino
 2. **Clone the Repository:**
    ```sh
    git clone https://github.com/Nur-Quraishi/One-Stop-National-Citizen-Service---A-SOAP-Project.git
-   cd  cd One-Stop-National-Citizen-Service---A-SOAP-Project
+   cd One-Stop-National-Citizen-Service---A-SOAP-Project
    
 3. **Load Each Folder into IntelliJ:**
    - Download and install IntelliJ IDEA - 2023.3.4.
